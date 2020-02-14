@@ -1,0 +1,18 @@
+ <table class="c2p_order-book_table">
+            <thead class="c2p_order-book_table_head">
+              <tr align="left">
+                <th>Size</th>
+                <th>Price ({{selectedCoin}})</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody class="c2p_order-book_table_body" *ngIf="marketData?.length">
+              <tr *ngFor="let data of pagingMarketData">
+                <td>{{data.qty}}</td>
+                <td>{{data.price | number : '1.2-2'}}</td>
+                <td>{{(data.price * data.qty) | number : '1.2-2'}}</td>
+              </tr>
+            </tbody>
+          </table>
+            <ngb-pagination [collectionSize]="marketData.length" [(page)]="page" [pageSize]="pageSize" [maxSize]="5">
+            </ngb-pagination>
