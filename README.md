@@ -1,0 +1,2 @@
+# ngPaginationWithBootstrap
+Pagination with bootstrap
